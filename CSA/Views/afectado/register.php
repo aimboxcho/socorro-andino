@@ -17,19 +17,19 @@
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
                         <label>Nombre y Apellido de Accidentado</label>
-                        <input type="text" name="nombre" class="form-control" required>
+                        <input type="text" name="nombre" class="form-control" oninput="validarLetras(this)" required>
                       </div>
                     </div>
                     <div class="col-md-3 px-1">
                       <div class="form-group">
                         <label>Edad</label>
-                        <input type="number" name="edad" class="form-control" required>
+                        <input type="number" name="edad" class="form-control" oninput="validarNumber(this)" required>
                       </div>
                     </div>
                     <div class="col-md-3 px-1">
                       <div class="form-group">
                         <label>Numero Celular</label>
-                        <input type="number" name="celular" class="form-control" required>
+                        <input type="number" name="celular" class="form-control" oninput="validarNumber(this)" required>
                       </div>
                     </div>
                     <div class="col-md-5 pr-1">
@@ -41,7 +41,7 @@
                     <div class="col-md-3 px-1">
                       <div class="form-group">
                         <label>Club Pertenece</label>
-                        <input type="text" name="club" class="form-control" required>
+                        <input type="text" name="club" class="form-control"  oninput="validarLetras(this)" required>
                       </div>
                     </div>
                     <div class="col-md-3 px-1">
@@ -58,19 +58,22 @@
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
                         <label>Años de experiencia</label>
-                        <input type="number" name="experiencia" class="form-control" required>
+                        <input type="number" name="experiencia" class="form-control" oninput="validarNumber(this)" required>
                       </div>
                     </div>
                     <div class="col-md-3 px-1">
                       <div class="form-group">
                         <label>Sexo</label>
-                        <input type="text" name="sexo" class="form-control" required>
+                        <select name="sexo"  class="form-control" required>
+                          <option value="Hombre">Hombre</option>
+                          <option value="Mujer">Mujer</option>
+                        </select>
                       </div>
                     </div>
                     <div class="col-md-3 px-1">
                       <div class="form-group">
                         <label>Rut</label>
-                        <input type="text" name="rut" class="form-control" required>
+                        <input type="text" name="rut" class="form-control"  oninput="validarInput(this)" required>
                       </div>
                     </div>
                   </div>
@@ -125,7 +128,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Cantidad de Voluntarios</label>
-                        <input type="number" class="form-control" name="cantidad">
+                        <input type="number" class="form-control" oninput="validarNumber(this)" name="cantidad">
                       </div>
                     </div>
                   </div>
@@ -159,25 +162,25 @@
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Desnivel positivo</label>
-                        <input type="number" class="form-control" name="desnivel_positivo">
+                        <input type="number" class="form-control" oninput="validarNumberAltura(this, 4)" name="desnivel_positivo" maxlength="4">
                       </div>
                     </div>
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Desnivel negativo</label>
-                        <input type="number" class="form-control" name="desnivel_negativo">
+                        <input type="number" class="form-control" oninput="validarNumberAltura(this, 4)" name="desnivel_negativo" maxlength="4">
                       </div>
                     </div>
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Altura Maxima Alcanzada(MSNM)</label>
-                        <input type="number" class="form-control" name="altura_maxima" >
+                        <input type="number" class="form-control" oninput="validarNumberAltura(this, 4)" name="altura_maxima" maxlength="4">
                       </div>
                     </div>
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Distancia Recorrida(KM)</label>
-                        <input type="number" class="form-control" name="distancia_recorrida">
+                        <input type="number" class="form-control" oninput="validarNumberDistancia(this, 3)" name="distancia_recorrida" maxlength="3">
                       </div>
                     </div>
                     <div class="col-md-6 pr-1">

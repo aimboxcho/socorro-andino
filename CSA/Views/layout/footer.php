@@ -10,6 +10,8 @@
     </div>
   </div>
 
+<!-- Graficos de chartJS -->
+
 <script>
   <?php 
     $chartjs = new Chartjs();
@@ -18,7 +20,6 @@
   ?>
   var chartData = <?php echo $data_json; ?>;
 </script>
-
 
 <script>
   <?php 
@@ -30,13 +31,9 @@
 </script>
 
 
-
-
 <script src="<?=base_url?>Views/assets/js/dashboard.js"></script>
 
-
-
-  <!-- JavaScript Libraries -->
+  <!-- JavaScript Librerias -->
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
@@ -86,6 +83,48 @@
      ] 
 
 });
+</script>
+
+<!-- Validaciones de formularios -->
+
+<script>
+        function validarInput(input) {
+            var valor = input.value;
+            valor = valor.replace(/[^0-9kK]/g, '');
+            input.value = valor;
+        }
+
+        function validarLetras(input) {
+            var valor = input.value;
+            valor = valor.replace(/[^a-zA-Z]/g, '');
+            input.value = valor;
+        }
+
+        function validarNumber(input) {
+            var valor = input.value;
+            valor = valor.replace(/[^0-9]/g, '');
+            input.value = valor;
+        }
+
+        function validarNumberAltura(input, maxLength) {
+            var valor = input.value;
+            valor = valor.replace(/[^0-9]/g, '');
+            input.value = valor;
+
+            if (input.value.length > maxLength) {
+            input.value = input.value.slice(0, maxLength);
+            }
+        }
+
+        function validarNumberDistancia(input, maxLength) {
+            var valor = input.value;
+            valor = valor.replace(/[^0-9]/g, '');
+            input.value = valor;
+
+            if (input.value.length > maxLength) {
+            input.value = input.value.slice(0, maxLength);
+            }
+        }
 </script>
 
 </body>

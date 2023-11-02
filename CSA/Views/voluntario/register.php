@@ -15,13 +15,13 @@
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
                         <label>Nombres</label>
-                        <input type="text" class="form-control"  placeholder="" name="nombres_volun" required>
+                        <input type="text" class="form-control"  placeholder="" name="nombres_volun" oninput="validarLetras(this)"  required>
                       </div>
                     </div>
                     <div class="col-md-3 px-1">
                       <div class="form-group">
                         <label>Apellidos</label>
-                        <input type="text" class="form-control" value="" name="apellido_volun" required>
+                        <input type="text" class="form-control" value="" name="apellido_volun" oninput="validarLetras(this)" required >
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
@@ -35,7 +35,7 @@
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Rut</label>
-                        <input type="text" class="form-control" placeholder="" name="rut_volun" required>
+                        <input type="text" class="form-control" placeholder="" name="rut_volun" oninput="validarInput(this)" required>
                       </div>
                     </div>
                     <div class="col-md-6 pl-1">
@@ -49,7 +49,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Edad</label>
-                        <input type="number" class="form-control" name="edad_volun" required>
+                        <input type="number" class="form-control" name="edad_volun" oninput="validarNumber(this)" required min="1">
                       </div>
                     </div>
                   </div>
@@ -80,6 +80,8 @@
                         <select name="tipo_volun" class="form-control">
                           <option value="Aspirante">Aspirante</option>
                           <option value="Socorrista">Socorrista</option>
+                          <option value="Honorario">Honorario</option>
+                          <option value="Cooperador">Cooperador</option>
                         </select>
                       </div>
                     </div>
