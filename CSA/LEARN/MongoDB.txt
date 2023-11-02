@@ -1,0 +1,15 @@
+-------------------------------------------SQL Y NOSQL COMPARATIVAS----------------------
+
+SQL:
+    -Relacionales
+    -Tablas
+    -Esquema
+
+NoSQL:
+    -No Relacionales
+    -JAVASCRIPT
+    -Orientados a documentos(json, bson)
+    -Sencillez
+    -velocidad
+    -Esquema Libre
+    

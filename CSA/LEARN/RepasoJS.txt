@@ -1,0 +1,75 @@
+---------------------------------REPASO JAVASCRIPT---------------------------------------------------------------------------------------------------------
+
+OBJETOS JSON--------------------------------------
+
+//Declaro un objeto y sus propiedades
+var coche = {
+    modelo: 'Mercedes Clase A',
+    maxima: 500,
+    antiguedad: 2020
+    mostrarDatos(){
+        console.log(modelo,maxima,antiguedad);
+    },
+    pripiedad1: "valor aleatorio"
+};
+
+//Imprimo por pantalla
+document.write("<h1>"+coche.modelo+"</h1>")
+
+//Instancia la funcion dentro del objeto
+coche.mostrarDatos();
+
+PROMESAS------------------------------------------
+
+//Recibe una respuesta positiva(resolve) o una negativa en caso de no cumplir(reject)
+//setTimeout espera un tiempo a que algo se ejecute, no directamente cuando carga la pagina.
+var saludar = new Promise((resolve,reject) => {
+    setTimeout(() => {
+        let saludo = "Hola chavales";
+        if(saludo){
+            resolve(saludo);
+        }else{
+            reject("No hay saludo disponible");
+        }
+    }, 2000);
+});
+
+//then es como decir, hace lo de la izquierda y luego hace esto(then)
+saludar.then(resultado => {
+    alert(resultado);
+})
+.catch(err => {
+    alert(error);
+})
+
+CLASES--------------------------------------------
+
+//Class es para declarar una Clase
+//constructor es el primer metodo o funcion que iniciara en el sistema y el this, son las caracteristicas
+class Coche{
+    constructor(){
+        this.modelo = modelo;
+        this.velocidad = velocidad;
+        this.antiguedad = antiguedad;
+    }
+
+    aumentarVelocidad(){
+        this.velocidad += 1;
+    }
+
+    disminuirVelocidad(){
+        this.velocidad -= 1;
+    }
+}
+
+var coche1 = new Coche('bmw', 200, 2022);
+
+HERENCIA-------------------------------------------
+
+//extendemos los valroes de la clase Coche(padre) a nuestro Autobus
+class Autobus extends Coche{
+    constructor(modelo, velocidad, antiguedad){
+        super(modelo, velocidad, antiguedad);
+        this.altura = altura;
+    }
+}
