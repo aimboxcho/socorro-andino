@@ -91,16 +91,21 @@
                           <th class="text-right">
                             Cantidad
                           </th>
+                          <th class="text-right">
+                            Cantidad
+                          </th>
                         </thead>
                         <tbody>
                         <?php while ($cositas = $inventarios->fetch_object()): ?>
                           <tr>
                             <td><?= $cositas->nombreObjeto ?></td>
                             <td><?= $cositas->tipo_objeto ?></td>
-                            <td><?= $cositas->fecha_registro ?>  <?= $cositas->hora_registro ?></td>
-                            <td class='text-right'>
-                                <div id="cantidad_<?=$cositas->id?>"><?= $cositas->cantidad ?></div>
-                                <button class="btn btn-sm btn-primary" onclick='sumarProducto(<?=$cositas->id?>)'>+</button>
+                            <td><?= $cositas->fecha_registro ?> / <?= $cositas->hora_registro ?></td>
+                            <td class='text-center'>
+                            <div id="cantidad_<?=$cositas->id?>" style="display:inline-block;"><?= $cositas->cantidad ?></div>
+
+                            </td>
+                            <td class='text-right'><button class="btn btn-sm btn-primary" onclick='sumarProducto(<?=$cositas->id?>)'>+</button>
                                 <button class="btn btn-sm btn-danger" onclick='restarProducto(<?=$cositas->id?>)'>-</button>
                             </td>
                           </tr>
@@ -192,9 +197,13 @@
             $.ajax({
                 type: "POST",
                 url: "<?=base_url?>inventario/operacion",
+                dataType: "text", 
                 data: { id: id, operacion: 'sumar' },
                 success: function(response) {
-                    $("#cantidad_" + id).text(response);
+                  //  $("#cantidad_" + id).text(response);
+                  setTimeout(function() {
+                      location.reload();
+                  }, 0)
                 }
             });
         }
@@ -205,9 +214,13 @@
                 url: "<?=base_url?>inventario/operacion",
                 data: { id: id, operacion: 'restar' },
                 success: function(response) {
-                    $("#cantidad_" + id).text(response);
+                  //  $("#cantidad_" + id).text(response);
+                  setTimeout(function() {
+                      location.reload();
+                  }, 0)
                 }
             });
+
         }
 </script>
 

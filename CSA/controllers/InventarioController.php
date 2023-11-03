@@ -79,7 +79,6 @@ class inventarioController{
     
             $inventarioModel->setCantidad($nueva_cantidad);
             $inventarioModel->update();
-            echo '<script> location.replace("'.base_url.'/inventario/inventario'.'");</script>';
 
         }
     }
