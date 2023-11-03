@@ -3,7 +3,7 @@
 require_once 'helpers/helpers.php';
 require_once 'Models/inventario.php';
 
-class inventarioController{
+class inventarioController{           
     public function inventario(){
         Utils::SessionON();
 
@@ -58,8 +58,31 @@ class inventarioController{
         }
 
     }
+
+    public function operacion() {
+        $id = $_POST['id'];
+        $operacion = $_POST['operacion'];
+    
+        $inventarioModel = new Inventario(); // Asegúrate de que estás utilizando el modelo correcto.
+    
+        $inventarioModel->setId($id);
+        $inventario = $inventarioModel->getOne();
+    
+        if ($inventario) {
+            $cantidad_actual = $inventario->cantidad;
+    
+            if ($operacion === 'sumar') {
+                $nueva_cantidad = $cantidad_actual + 1;
+            } elseif ($operacion === 'restar' && $cantidad_actual > 0) {
+                $nueva_cantidad = $cantidad_actual - 1;
+            }
+    
+            $inventarioModel->setCantidad($nueva_cantidad);
+            $inventarioModel->update();
+            echo '<script> location.replace("'.base_url.'/inventario/inventario'.'");</script>';
+
+        }
+    }
 }
-
-
 
 ?>

@@ -93,20 +93,26 @@
                           </th>
                         </thead>
                         <tbody>
-                          <?php while ($cositas = $inventarios->fetch_object()): ?>
-                            <tr>
-                              <td><?=$cositas->nombreObjeto?></td>
-                              <td><?=$cositas->tipo_objeto?></td>
-                              <td><?=$cositas->fecha_registro?>  <?=$cositas->hora_registro?></td>
-                              <td class='text-right'><?=$cositas->cantidad?></td>
-                            </tr>
-                          <?php endwhile;?>
+                        <?php while ($cositas = $inventarios->fetch_object()): ?>
+                          <tr>
+                            <td><?= $cositas->nombreObjeto ?></td>
+                            <td><?= $cositas->tipo_objeto ?></td>
+                            <td><?= $cositas->fecha_registro ?>  <?= $cositas->hora_registro ?></td>
+                            <td class='text-right'>
+                                <div id="cantidad_<?=$cositas->id?>"><?= $cositas->cantidad ?></div>
+                                <button class="btn btn-sm btn-primary" onclick='sumarProducto(<?=$cositas->id?>)'>+</button>
+                                <button class="btn btn-sm btn-danger" onclick='restarProducto(<?=$cositas->id?>)'>-</button>
+                            </td>
+                          </tr>
+                        <?php endwhile; ?>
                         </tbody>
                       </table>
                     </div>
                   </div>
                 </div>
               </div>
+
+
               <!--EQUIPO DE MONTAÑA ------------------------------------------------------------------->
               <div class="col-md-6">
                 <div class="card">
@@ -179,3 +185,33 @@
           </div>
         </div>
       </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+        function sumarProducto(id) {
+            $.ajax({
+                type: "POST",
+                url: "<?=base_url?>inventario/operacion",
+                data: { id: id, operacion: 'sumar' },
+                success: function(response) {
+                    $("#cantidad_" + id).text(response);
+                }
+            });
+        }
+
+        function restarProducto(id) {
+            $.ajax({
+                type: "POST",
+                url: "<?=base_url?>inventario/operacion",
+                data: { id: id, operacion: 'restar' },
+                success: function(response) {
+                    $("#cantidad_" + id).text(response);
+                }
+            });
+        }
+</script>
+
+
+
+
+

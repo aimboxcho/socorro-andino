@@ -61,6 +61,7 @@ class Inventario{
         return $inventario;
     }
 
+
     public function getEM(){
         $query = "SELECT * FROM Inventario WHERE tipo_objeto = 'Ropa de Montaña';";
         $montana = $this->db->query($query);
@@ -92,10 +93,18 @@ class Inventario{
         return $avalancha;
     }
 
+    public function getOne(){
+        $query = "SELECT cantidad FROM Inventario where id = {$this->getId()};";
+        $inventario = $this->db->query($query);
+        return $inventario->fetch_object();
+    }
+
+    public function update(){
+        $query = "UPDATE inventario set cantidad = {$this->getCantidad()}  WHERE id = {$this->getId()}";
+        $save = $this->db->query($query);
+        return $save;
+    }
+
 }
-
-
-
-
 
 ?>
