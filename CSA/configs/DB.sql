@@ -15,14 +15,10 @@ CREATE TABLE Inventario(
     nombreObjeto        varchar(50) not null,
     cantidad            int(11) not null, 
     color               varchar(50), 
-    dimensiones         int(11), 
-    estado              BOOLEAN not null, 
     observacion         TEXT,
-    imagen              BLOB,
     fecha_registro      DATE,
     hora_registro       TIME,
-    registrador         varchar(100) not null,
-)ENGINE=InnoDb;
+    registrador         varchar(100) not null
 
 CREATE TABLE Vehiculos(
     id                  int(11) PRIMARY KEY auto_increment not null,
