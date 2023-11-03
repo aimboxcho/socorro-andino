@@ -10,7 +10,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="dashboard.html">Bienvenido a la base analitica de CSA</a>
+            <a class="navbar-brand" href="<?=base_url?>">Bienvenido <?=$_SESSION['identity']->nombres_volun?> <?=$_SESSION['identity']->apellido_volun?> </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>

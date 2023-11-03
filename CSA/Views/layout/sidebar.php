@@ -14,7 +14,7 @@
         <ul class="nav">
           <li class="active ">
             <a href="<?=base_url?>">
-              <i class="now-ui-icons design_app"></i>
+              <i class="now-ui-icons business_chart-bar-32"></i>
               <p>Analisis de Dato</p>
             </a>
           </li>
@@ -44,8 +44,8 @@
           </li>
           <li>
             <a href="<?=base_url?>inventario/inventario">
-              <i class="now-ui-icons ui-1_calendar-60"></i>
-              <p>Gestion de Inventario</p>
+              <i class="now-ui-icons design_bullet-list-67"></i>
+              <p>Inventario</p>
             </a>
           </li>
         </li>

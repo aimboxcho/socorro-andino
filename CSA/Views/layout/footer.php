@@ -74,14 +74,16 @@
        {
           extend: 'pdf',
           exportOptions: {
-            columns: [0,1]
           }
        },
        {
           extend: 'csv',
-       } 
-     ] 
-
+       },
+       {
+          extend: 'excel',
+       },
+       'print' // Habilitar el botón de impresión
+     ]
 });
 </script>
 
