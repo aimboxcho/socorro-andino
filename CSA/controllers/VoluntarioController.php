@@ -206,8 +206,6 @@ class voluntarioController{
         $update->setAlergia($_POST['alergia_volun']);
         $update->setDescripcion($_POST['descripcion_volun']);
 
-    
-
         $id = $_GET['id'];
         $update->setId($id);
         $updatesave = $update->update();
@@ -228,14 +226,15 @@ class voluntarioController{
 
         if($deleteuser){
             $_SESSION['complete'] = "Se ha eliminado el voluntario correctamente";
-        }else{
-            $_SESSION['failed'] = "No se ha podido eliminar";
+        } else {
+            $_SESSION['failed'] = "No se ha podido eliminar correctamente";
         }
         echo '<script> location.replace("'.base_url.'/voluntario/tables'.'");</script>';
     }
 
 
     public function logout(){
+        Utils::SessionON();
         if(isset($_SESSION['identity'])){
             unset($_SESSION['identity']);
         }

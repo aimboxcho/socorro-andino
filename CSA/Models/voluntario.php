@@ -200,13 +200,13 @@
         public function delete(){
             $query = "DELETE FROM voluntarios WHERE id = {$this->getId()}";
             $save = $this->db->query($query);
-
+        
             if($save){
                 $result = true;
                 $usuario = $_SESSION['identity']->id;
-                $registro = "INSERT INTO registros VALUES(NULL, 'Se ha actualizado cantidad de un articulo de inventario', NOW(), $usuario);";
-                $this->db->query($registro);
-            }else{
+                $registro = "INSERT INTO registros VALUES(NULL, 'Se ha eliminado un voluntario', NOW(), $usuario);";
+                $registros = $this->db->query($registro);
+            } else {
                 $result = false;
             }
             

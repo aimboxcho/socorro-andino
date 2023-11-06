@@ -29,6 +29,7 @@ class inventarioController{
     }
 
     public function save(){
+        Utils::SessionON();
         if($_POST){
             $tipo = isset($_POST['tipo_objeto']) ? $_POST['tipo_objeto'] : false;
             $nombre = isset($_POST['nombreObjeto']) ? $_POST['nombreObjeto'] : false;
@@ -59,6 +60,7 @@ class inventarioController{
     }
 
     public function operacion() {
+        Utils::SessionON();
         $id = $_POST['id'];
         $operacion = $_POST['operacion'];
     
@@ -84,6 +86,7 @@ class inventarioController{
 
 
     public function delete(){
+        Utils::SessionON();
         $id = $_GET['id'];
         $delete = new inventario();
         $delete->setId($id);
