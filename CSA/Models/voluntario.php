@@ -205,7 +205,7 @@
                 $result = true;
                 $usuario = $_SESSION['identity']->id;
                 $registro = "INSERT INTO registros VALUES(NULL, 'Se ha eliminado un voluntario', NOW(), $usuario);";
-                $registros = $this->db->query($registro);
+                $this->db->query($registro);
             } else {
                 $result = false;
             }

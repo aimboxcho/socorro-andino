@@ -77,7 +77,7 @@ CREATE TABLE Rescate(
     distancia_recorrida int(11),
     condiciones         varchar(100),
     id_voluntario       int(11) not null,
-    CONSTRAINT fk_id_voluntario_respo FOREIGN KEY(id_voluntario) REFERENCES Voluntarios(id),
+    CONSTRAINT fk_id_voluntario_respo FOREIGN KEY(id_voluntario) REFERENCES Voluntarios(id)  ON CASCADE,
     CONSTRAINT fk_id_comuna FOREIGN KEY(id_comuna) REFERENCES Comunas(id)
 )ENGINE=InnoDb;
 
@@ -86,5 +86,5 @@ CREATE TABLE Registros(
     descripcion  varchar(100) not null,
     fecha DATETIME not null,
     id_voluntario int(11),
-    CONSTRAINT fk_id_voluntario_registro FOREIGN KEY(id_voluntario) REFERENCES Voluntarios(id)
+    CONSTRAINT fk_id_voluntario_registro FOREIGN KEY(id_voluntario) REFERENCES Voluntarios(id) ON CASCADE
 )ENGINE=InnoDb;
