@@ -115,6 +115,23 @@ class Inventario{
         }
         return $result;
     }
+
+    public function delete(){
+        $query = "DELETE FROM inventario WHERE id = {$this->getId()}";
+        $save = $this->db->query($query);      
+
+        if($save){
+            $result = true;
+            $usuario = $_SESSION['identity']->id;
+            $registro = "INSERT INTO registros VALUES(NULL, 'Se ha eliminado un articulo de inventario', NOW(), $usuario);";
+            $enviado = $this->db->query($registro);      
+        }else{
+            $result = false;
+        }
+
+        return $result;
+
+    }
 }
 
 ?>

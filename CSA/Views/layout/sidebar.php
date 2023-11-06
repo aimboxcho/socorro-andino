@@ -36,12 +36,12 @@
               <p>Gestión de Inventario</p>
             </a>
           </li>
-          <li>
-            <a href="<?=base_url?>calendario/calendario">
+          <!--<li>
+            <a href="calendario/calendario">
               <i class="now-ui-icons ui-1_calendar-60"></i>
               <p>Calendario - Eventos</p>
             </a>
-          </li>
+          </li> -->
           <li>
             <a href="<?=base_url?>voluntario/logs">
               <i class="now-ui-icons files_paper"></i>

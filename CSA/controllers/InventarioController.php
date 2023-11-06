@@ -54,7 +54,6 @@ class inventarioController{
 
             }
             echo '<script> location.replace("'.base_url.'/inventario/inventario'.'");</script>';
-
         }
 
     }
@@ -81,6 +80,23 @@ class inventarioController{
             $inventarioModel->update();
 
         }
+    }
+
+
+    public function delete(){
+        $id = $_GET['id'];
+        $delete = new inventario();
+        $delete->setId($id);
+        $deletes = $delete->delete();
+
+            if($deletes){
+                $_SESSION['complete'] = "Registro Exitoso";
+            }else{
+                $_SESSION['complete'] = "El registro Fracaso";
+
+            }
+            echo '<script> location.replace("'.base_url.'/inventario/inventario'.'");</script>';
+
     }
 }
 

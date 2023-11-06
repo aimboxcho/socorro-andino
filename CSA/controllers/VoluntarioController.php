@@ -232,7 +232,6 @@ class voluntarioController{
             $_SESSION['failed'] = "No se ha podido eliminar";
         }
         echo '<script> location.replace("'.base_url.'/voluntario/tables'.'");</script>';
-
     }
 
 

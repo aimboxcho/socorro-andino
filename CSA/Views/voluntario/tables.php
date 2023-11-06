@@ -76,7 +76,7 @@
                           <a href="<?=base_url?>voluntario/update&id=<?=$voluntario->id?>"><i class="now-ui-icons ui-1_settings-gear-63"></i></a>
                         </td>
                         <td class="text-center">
-                          <a href="<?=base_url?>voluntario/delete&id=<?=$voluntario->id?>"><i class="now-ui-icons ui-1_simple-remove"></i></a>
+                          <a href="" onclick="verificarContraseñas(<?=$voluntario->id?>)"><i class="now-ui-icons ui-1_simple-remove"></i></a>
                         </td>
                       </tr>
                       <?php endwhile; ?>
@@ -90,23 +90,17 @@
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class=" container-fluid ">
-          <nav>
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Inicio
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright" id="copyright">
-            &copy; <script>
-              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, Derechos reservados para <a href="#" target="_blank">Socorro Andino</a>.
-          </div>
-        </div>
-      </footer>
+      <script>
+        function verificarContraseñas(id){
+            var contraseña_ingreso = prompt("Ingresar codigo de acceso");
+            var contraseña = "admin"
+
+            if(contraseña_ingreso === contraseña){
+              window.location.href = "<?=base_url?>voluntario/delete&id="+id;
+            }else{
+              alert("La contraseña es incorrecta, no puedes eliminar");
+            }
+        }
+    </script>
     </div>
   </div>

@@ -74,6 +74,17 @@
                 <div class="card">
                   <div class="card-header">
                     <h4 class="card-title"> Equipo de Montaña</h4>
+                    <?php if(isset($_SESSION['complete'])):?>
+                    <div class="card-header" style="background:rgb(123, 171, 91); color: white; display: inline-block;">
+                      <p><?=$_SESSION['complete'];?></p>
+                      <?php Utils::deletemessage();?>
+                    </div>
+                    <?php elseif(isset($_SESSION['failed'])):?>
+                        <div class="card-header" style="background:rgb(193, 82, 82); color: white; display: inline-block;">
+                          <p><?=$_SESSION['failed'];?></p>
+                          <?php Utils::deletemessage();?>
+                        </div>
+                    <?php endif; ?>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -94,6 +105,9 @@
                           <th class="text-right">
                             Acciones
                           </th>
+                          <th class="text-right">
+                            Eliminar
+                          </th>
                         </thead>
                         <tbody>
                         <?php while ($cositas = $inventarios->fetch_object()): ?>
@@ -107,6 +121,9 @@
                             </td>
                             <td class='text-right'><button class="btn btn-sm btn-primary" onclick='sumarProducto(<?=$cositas->id?>)'>+</button>
                                 <button class="btn btn-sm btn-danger" onclick='restarProducto(<?=$cositas->id?>)'>-</button>
+                            </td>
+                            <td class="text-center">
+                              <a href=""  onclick="verificarContraseña(<?=$cositas->id?>)"><i class="now-ui-icons ui-1_simple-remove"></i></a>
                             </td>
                           </tr>
                         <?php endwhile; ?>
@@ -221,6 +238,17 @@
                 }
             });
 
+        }
+        
+        function verificarContraseña(id){
+            var contraseña_ingreso = prompt("Ingresar codigo de acceso");
+            var contraseña = "admin"
+
+            if(contraseña_ingreso === contraseña){
+              window.location.href = "<?=base_url?>inventario/delete&id="+id;
+            }else{
+              alert("La contraseña es incorrecta, no puedes eliminar");
+            }
         }
 </script>
 
