@@ -48,6 +48,8 @@ class Inventario{
 
         if($save){
             $result = true;
+            $registro = "INSERT INTO registros VALUES(NULL, 'Se ha ingresado un registro de Inventario', NOW());";
+            $this->db->query($registro);
         }else{
             $result = false;
         }
@@ -102,9 +104,17 @@ class Inventario{
     public function update(){
         $query = "UPDATE inventario set cantidad = {$this->getCantidad()}  WHERE id = {$this->getId()}";
         $save = $this->db->query($query);
-        return $save;
-    }
 
+        if($save){
+            $result = true;
+            $usuario = $_SESSION['identity']->id;
+            $registro = "INSERT INTO registros VALUES(NULL, 'Se ha actualizado cantidad de un articulo de inventario', NOW(), $usuario);";
+            $this->db->query($registro);
+        }else{
+            $result = false;
+        }
+        return $result;
+    }
 }
 
 ?>

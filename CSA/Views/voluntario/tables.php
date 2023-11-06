@@ -7,7 +7,7 @@
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> Registro de Voluntario</h4>
-                <p><a href="<?=base_url?>voluntario/register">Registrar a Voluntario(AQUI)</a></p>
+                <p><a href="<?=base_url?>voluntario/register" class="btn">Registrar Voluntario</a></p>
                 <?php if(isset($_SESSION['complete'])):?>
                     <div class="card-header" style="background:rgb(123, 171, 91); color: white; display: inline-block;">
                       <p><?=$_SESSION['complete'];?></p>

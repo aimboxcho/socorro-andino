@@ -20,13 +20,16 @@ class voluntarioController{
         $rescate = new Afectado();
         $rescates = $rescate->getAll();
 
-        $registros = new Registros();
-        $registro = $registros->getAll();
-
         $rescatechart = new Afectado();
         $rescatechart->getAll();
         
         require_once 'Views/principal/dasboard.php';
+    }
+
+    public function logs(){
+        $registros = new Registros();
+        $registro = $registros->getAll();
+        require_once 'Views/logs/logs.php';
     }
 
     public function ViewLogin(){

@@ -17,7 +17,7 @@
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
                         <label>Nombre y Apellido de Accidentado</label>
-                        <input type="text" name="nombre" class="form-control" oninput="validarLetras(this)" required>
+                        <input type="text" name="nombre" class="form-control" required>
                       </div>
                     </div>
                     <div class="col-md-3 px-1">
@@ -41,7 +41,7 @@
                     <div class="col-md-3 px-1">
                       <div class="form-group">
                         <label>Club Pertenece</label>
-                        <input type="text" name="club" class="form-control"  oninput="validarLetras(this)" required>
+                        <input type="text" name="club" class="form-control"   required>
                       </div>
                     </div>
                     <div class="col-md-3 px-1">

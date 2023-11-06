@@ -15,7 +15,7 @@ class Registros{
     }
 
     public function getAll(){
-        $query = "SELECT * FROM registros";
+        $query = "SELECT r.*, v.nombres_volun as voluntario FROM registros r INNER JOIN voluntarios v ON r.id_voluntario = v.id";
         $save = $this->db->query($query);
         return $save;
     }

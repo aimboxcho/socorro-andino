@@ -187,7 +187,8 @@
 
             if($save){
                 $result = true;
-                $registro = "INSERT INTO registros VALUES(NULL, 'Se ha actualizado un registro de Voluntario', NOW());";
+                $usuario = $_SESSION['identity']->id;
+                $registro = "INSERT INTO registros VALUES(NULL, 'Se ha actualizado cantidad de un articulo de inventario', NOW(), $usuario);";
                 $this->db->query($registro);
             }else{
                 $result = false;
@@ -202,7 +203,8 @@
 
             if($save){
                 $result = true;
-                $registro = "INSERT INTO registros VALUES(NULL, 'Se ha eliminado un registro el Voluntario', NOW());";
+                $usuario = $_SESSION['identity']->id;
+                $registro = "INSERT INTO registros VALUES(NULL, 'Se ha actualizado cantidad de un articulo de inventario', NOW(), $usuario);";
                 $this->db->query($registro);
             }else{
                 $result = false;

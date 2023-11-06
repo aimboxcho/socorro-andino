@@ -109,7 +109,8 @@ class Afectado{
 
         if($save){
             $response = true;
-            $registro = "INSERT INTO registros VALUES(NULL, 'Se ha ingresado un registro de Rescate', NOW());";
+            $usuario = $_SESSION['identity']->id;
+            $registro = "INSERT INTO registros VALUES(NULL, 'Se ha actualizado cantidad de un articulo de inventario', NOW(), $usuario);";            
             $this->db->query($registro);
         }else{
             $response = false;
@@ -123,7 +124,8 @@ class Afectado{
 
         if($save){
             $response = true;
-            $registro = "INSERT INTO registros VALUES(NULL, 'Se ha eliminado un registro de Rescate', NOW());";
+            $usuario = $_SESSION['identity']->id;
+            $registro = "INSERT INTO registros VALUES(NULL, 'Se ha actualizado cantidad de un articulo de inventario', NOW(), $usuario);";            
             $this->db->query($registro);
         }else{
             $response = false;

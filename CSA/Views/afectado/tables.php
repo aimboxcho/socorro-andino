@@ -7,7 +7,7 @@
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title"> Registro de Socorrista</h4>
-                <p><a href="<?=base_url?>afectado/register">Registrar Rescate(AQUI)</a></p>
+                <p><a href="<?=base_url?>afectado/register" class="btn">Registrar Rescate</a></p>
                 <?php if(isset($_SESSION['complete'])):?>
                     <div class="card-header" style="background:rgb(123, 171, 91); color: white; display: inline-block;">
                       <p><?=$_SESSION['complete'];?></p>

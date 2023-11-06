@@ -13,12 +13,12 @@
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
                         <label>Nombre</label>
-                        <input type="text" class="form-control"  placeholder="" name="nombreObjeto" id="nombreObjeto" oninput="validarLetras(this)"  required>
+                        <input type="text" class="form-control"  placeholder="" name="nombreObjeto" id="nombreObjeto"   required>
                       </div>
                     </div>
                     <div class="col-md-3 px-1">
                       <div class="form-group">
-                        <label>Tipo</label>
+                        <label>Categoria</label>
                         <select name="tipo_objeto" id="tipo_objeto" class="form-control">
                           <option value="Ropa de Montaña">Ropa de Montaña</option>
                           <option value="Ferreteria">Ferreteria</option>
@@ -39,14 +39,14 @@
                   <div class="row">
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
-                        <label>Color</label>
-                        <input type="text" class="form-control"  placeholder="" name="color" id="color" oninput="validarLetras(this)"  required>
+                        <label>Color(opcional)</label>
+                        <input type="text" class="form-control"  placeholder="" name="color" id="color" oninput="validarLetras(this)">
                       </div>
                     </div>
                     <div class="col-md-7 pl-1">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Registrado Por:</label>
-                        <input type="text" class="form-control" name="registrador" id="registrador" oninput="validarLetras(this)">
+                        <input type="text" class="form-control" name="registrador" id="registrador" oninput="validarLetras(this)" required>
                       </div>
                     </div>
                   </div>
@@ -92,7 +92,7 @@
                             Cantidad
                           </th>
                           <th class="text-right">
-                            Cantidad
+                            Acciones
                           </th>
                         </thead>
                         <tbody>

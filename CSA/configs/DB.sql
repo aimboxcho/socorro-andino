@@ -19,6 +19,7 @@ CREATE TABLE Inventario(
     fecha_registro      DATE,
     hora_registro       TIME,
     registrador         varchar(100) not null
+)
 
 CREATE TABLE Vehiculos(
     id                  int(11) PRIMARY KEY auto_increment not null,
@@ -83,5 +84,7 @@ CREATE TABLE Rescate(
 CREATE TABLE Registros(
     id   int(11) PRIMARY KEY auto_increment not null,
     descripcion  varchar(100) not null,
-    fecha DATETIME not null;
+    fecha DATETIME not null,
+    id_voluntario int(11),
+    CONSTRAINT fk_id_voluntario_registro FOREIGN KEY(id_voluntario) REFERENCES Voluntarios(id)
 )ENGINE=InnoDb;

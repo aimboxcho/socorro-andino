@@ -19,33 +19,33 @@
             </a>
           </li>
           <li>
-            <a href="<?=base_url?>voluntario/register">
-              <i class="now-ui-icons ui-1_simple-add"></i>
-              <p>Registro de Socorrista</p>
-            </a>
-          </li>
-          <li>
-            <a href="<?=base_url?>afectado/register">
-              <i class="now-ui-icons ui-1_simple-add"></i>
-              <p>Registro de Rescate</p>
-            </a>
-          </li>
-          <li>
             <a href="<?=base_url?>voluntario/tables">
               <i class="now-ui-icons ui-1_calendar-60"></i>
-              <p>Gestion de Voluntarios</p>
+              <p>Gestión de Voluntarios</p>
             </a>
           </li>
           <li>
             <a href="<?=base_url?>afectado/tables">
               <i class="now-ui-icons ui-1_calendar-60"></i>
-              <p>Gestion de Rescates</p>
+              <p>Gestión de Rescates</p>
             </a>
           </li>
           <li>
             <a href="<?=base_url?>inventario/inventario">
-              <i class="now-ui-icons design_bullet-list-67"></i>
-              <p>Inventario</p>
+              <i class="now-ui-icons ui-1_calendar-60"></i>
+              <p>Gestión de Inventario</p>
+            </a>
+          </li>
+          <li>
+            <a href="<?=base_url?>calendario/calendario">
+              <i class="now-ui-icons ui-1_calendar-60"></i>
+              <p>Calendario - Eventos</p>
+            </a>
+          </li>
+          <li>
+            <a href="<?=base_url?>voluntario/logs">
+              <i class="now-ui-icons files_paper"></i>
+              <p>Logs</p>
             </a>
           </li>
         </li>

@@ -12,8 +12,6 @@ class estadisticaController{
         return $tipo_voluntario;
     }
 
-
-
 }
 
 
