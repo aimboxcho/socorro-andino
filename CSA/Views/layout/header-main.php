@@ -16,6 +16,7 @@
     <!-- CSS Files -->
     <link href="<?=base_url?>Views/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="<?=base_url?>Views/assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+    <link href="<?=base_url?>Views/assets/css/demo.css" rel="stylesheet" />
 
     <!-- CSS BUTTON DATETABLE -->
     <link href='https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css' rel='stylesheet' type='text/css'>

@@ -33,15 +33,22 @@
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="now-ui-icons location_world"></i>
                   <p>
-                    <span class="d-lg-none d-md-block">Menú</span>
+                    N° Emergencia
                   </p>
                 </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item">133 Carabineros</a>
+                  <a class="dropdown-item">131 Emergencia</a>
+                  <a class="dropdown-item">132 PDI</a>
+                </div>
               </li>
+            </ul>
+            <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="<?=base_url?>voluntario/user">
                   <i class="now-ui-icons users_single-02"></i>
                   <p>
-                    <span class="d-lg-none d-md-block">Cuenta</span>
+                   Perfil
                   </p>
                 </a>
               </li>
