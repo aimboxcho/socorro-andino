@@ -80,8 +80,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
     <script>
         function verificarContraseña(id){
             var contraseña_ingreso = prompt("Ingresar codigo de acceso");

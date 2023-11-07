@@ -49,11 +49,11 @@
             </a>
           </li>
         </li>
-        <li>
-          <a href="<?=base_url?>voluntario/logout">
-            <i class="now-ui-icons ui-1_simple-remove"></i>
-            <p>Cerrar Sesion</p>
-          </a>
+        <li class="active-pro">
+            <a href="<?=base_url?>voluntario/logout">
+              <i class="now-ui-icons ui-1_simple-remove"></i>
+              <p>Cerrar Sesion</p>
+            </a>
         </li>
         </ul>
       </div>
