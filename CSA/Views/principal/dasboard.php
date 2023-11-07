@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-6">
-            <div class="card card-chart">
+            <div class="card card-chart" >
               <div class="card-header">
                 <h5 class="card-category">Cantidad de Busqueda y Rescate total</h5>
               </div>
@@ -26,13 +26,13 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-8">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-category">Cantidad de Busqueda y Rescate por Fecha</h5>
+                <h5 class="card-category">Cantidad de rescate por Zona</h5>
               </div>
               <div class="card-body">
-                <div class="chart-area">
+                <div class="chart-area" style="display:flex; justify-content:center; padding: 5px;">
                   <canvas id="myChart3"></canvas>
                 </div>
               </div>
@@ -41,11 +41,11 @@
           <div class="col-lg-6 col-md-6">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-category">Cantidad de Busqueda y Rescate por Fecha</h5>
+                <h5 class="card-category">Cantidad de rescate por fecha</h5>
               </div>
               <div class="card-body">
-                <div class="chart-area">
-                  <canvas id="myChart3"></canvas>
+                <div class="chart-area"  style="display:flex; justify-content:center; padding: 5px;">
+                  <canvas id="myChart4"></canvas>
                 </div>
               </div>
             </div>

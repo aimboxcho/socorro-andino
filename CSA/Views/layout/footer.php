@@ -10,7 +10,7 @@
     </div>
   </div>
 
-<!-- Graficos de chartJS -->
+<!-- Chartist.js -->
 
 <script>
   <?php 
@@ -29,6 +29,26 @@
   ?>
   var chartDatas = <?php echo $data_json2; ?>;
 </script>
+
+<script>
+  <?php 
+    $chartjs = new Chartjs();
+    $date = $chartjs->GraficoPie();
+    $data_json3 = json_encode($date);
+  ?>
+  var chartPie = <?php echo $data_json3; ?>;
+</script>
+
+<script>
+  <?php 
+    $chartjs = new Chartjs();
+    $line = $chartjs->GraficoLine();
+    $data_json4 = json_encode($line);
+  ?>
+  var chartLine = <?php echo $data_json4; ?>;
+
+</script>
+
 
 
 <script src="<?=base_url?>Views/assets/js/dashboard.js"></script>

@@ -146,6 +146,17 @@ class Afectado{
         return $save;
     }
 
+    public function getAllPie(){
+        $query = "SELECT count(id) as cantidades, zona  FROM Rescate GROUP BY zona";
+        $save = $this->db->query($query);
+        return $save;
+    }
+
+    public function getAllLine(){
+        $query = "SELECT count(id) as cantidades, fecha_rescate  FROM Rescate GROUP BY fecha_rescate";
+        $save = $this->db->query($query);
+        return $save;
+    }
 }
 
 

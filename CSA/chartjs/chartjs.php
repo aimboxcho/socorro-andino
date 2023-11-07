@@ -13,15 +13,13 @@
 
                 $id = $rescate->cantidad;
                 $zona = $rescate->zona;
-                $tipo_rescate = $rescate->tipo_rescate;
 
                 if(isset($data[$zona])){
                     $data[$zona]['id']+=$id;
                 }else{
                     $data[$zona] = array(
                         'zona' => $rescate->zona,
-                        'id' => $rescate->cantidad,
-                        'tipo_rescate' => $rescate->tipo_rescate
+                        'id' => $rescate->cantidad
                     );
                 }
             }
@@ -57,6 +55,58 @@
             $datadate = array_values($datadate);
 
             return $datadate;
+        }
+
+        public function GraficoPie(){
+            require_once 'Models/afectado.php';
+
+            $circle = new Afectado();
+            $circles = $circle->getAllPie();
+            $array = array();
+
+            while($pie = $circles->fetch_object()){
+                $id = $pie->cantidades;
+                $zona = $pie->zona;
+
+                if(isset($array[$zona])){
+                    $array[$zona]['id']+=$id;
+                }else{
+                    $array[$zona] = array(
+                        'id' => $pie->cantidades,
+                        'zona' => $pie->zona
+                    );
+                }
+            }
+
+            $array = array_values($array);
+
+            return $array;
+        }
+
+
+        public function GraficoLine(){
+            require_once 'Models/afectado.php';
+
+            $line = new Afectado();
+            $lines = $line->getAllLine();
+            $array_line = array();
+
+            while($row = $lines->fetch_object()){
+                $id = $row->cantidades;
+                $fecha_rescate = $row->fecha_rescate;
+        
+                if(isset($array_line[$fecha_rescate])){
+                    $array_line[$fecha_rescate]['id'] += $id;
+                } else {
+                    $array_line[$fecha_rescate] = array(
+                        'id' => $row->cantidades,
+                        'fecha_rescate' => $row->fecha_rescate
+                    );
+                }
+            }
+            $array_line = array_values($array_line);
+
+            return $array_line;
         }
 
     }
