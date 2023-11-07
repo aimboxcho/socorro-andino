@@ -93,14 +93,14 @@
 
             while($row = $lines->fetch_object()){
                 $id = $row->cantidades;
-                $fecha_rescate = $row->fecha_rescate;
+                $mes_anio = $row->mes_anio;
         
-                if(isset($array_line[$fecha_rescate])){
-                    $array_line[$fecha_rescate]['id'] += $id;
+                if(isset($array_line[$mes_anio])){
+                    $array_line[$mes_anio]['id'] += $id;
                 } else {
-                    $array_line[$fecha_rescate] = array(
+                    $array_line[$mes_anio] = array(
                         'id' => $row->cantidades,
-                        'fecha_rescate' => $row->fecha_rescate
+                        'mes_anio' => $row->mes_anio
                     );
                 }
             }

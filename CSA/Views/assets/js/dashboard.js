@@ -29,7 +29,7 @@ var myChart = new Chart(ctx, {
     data: {
         labels: labels,
         datasets: [{
-            label: 'Afectados',
+            label: labels,
             data: values,
             backgroundColor: colors,
             borderColor: 'rgba(75, 192, 192, 1)',
@@ -140,14 +140,9 @@ var myChart = new Chart(canvas, {
 //-------------------------------------------------------------------------------------------------------------------------------------
 
 var data_pie = chartLine;
-
-data_pie.sort(function(a, b) {
-    return new Date(a.fecha_rescate) - new Date(b.fecha_rescate);
-});
-
 // Datos de ejemplo
 var labels = data_pie.map(function(item) {
-    return item.fecha_rescate;
+    return item.mes_anio;
 });
 
 var values = data_pie.map(function(item) {
@@ -183,6 +178,5 @@ var myChart = new Chart(canvas, {
             ],
             borderWidth: 1,
         }],
-    },
- 
+    }
 });

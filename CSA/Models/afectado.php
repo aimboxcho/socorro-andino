@@ -153,7 +153,7 @@ class Afectado{
     }
 
     public function getAllLine(){
-        $query = "SELECT count(id) as cantidades, fecha_rescate  FROM Rescate GROUP BY fecha_rescate";
+        $query = "SELECT count(id) as cantidades, DATE_FORMAT(fecha_rescate, '%Y-%m') as mes_anio  FROM Rescate GROUP BY mes_anio";
         $save = $this->db->query($query);
         return $save;
     }
