@@ -66,14 +66,14 @@
 
             while($pie = $circles->fetch_object()){
                 $id = $pie->cantidades;
-                $zona = $pie->zona;
+                $descripcion = $pie->descripcion;
 
-                if(isset($array[$zona])){
-                    $array[$zona]['id']+=$id;
+                if(isset($array[$descripcion])){
+                    $array[$descripcion]['id']+=$id;
                 }else{
-                    $array[$zona] = array(
+                    $array[$descripcion] = array(
                         'id' => $pie->cantidades,
-                        'zona' => $pie->zona
+                        'descripcion' => $pie->descripcion
                     );
                 }
             }

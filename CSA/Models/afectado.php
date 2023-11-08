@@ -147,7 +147,7 @@ class Afectado{
     }
 
     public function getAllPie(){
-        $query = "SELECT count(id) as cantidades, zona  FROM Rescate GROUP BY zona";
+        $query = "SELECT count(id) as cantidades, descripcion  FROM Rescate GROUP BY descripcion";
         $save = $this->db->query($query);
         return $save;
     }

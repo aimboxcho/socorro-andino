@@ -29,7 +29,7 @@
           <div class="col-lg-6 col-md-8">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-category">Cantidad de rescate por Zona</h5>
+                <h5 class="card-category">Cantidad de accidentado por tipo de lesion</h5>
               </div>
               <div class="card-body">
                 <div class="chart-area" style="display:flex; justify-content:center; padding: 5px;">
@@ -51,8 +51,6 @@
             </div>
           </div>
         </div>
-
-
         <div class="row">
           <div class="col-md-12">
             <div class="card  card-tasks">

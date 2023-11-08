@@ -29,7 +29,7 @@ var myChart = new Chart(ctx, {
     data: {
         labels: labels,
         datasets: [{
-            label: labels,
+            label: 'Afectados',
             data: values,
             backgroundColor: colors,
             borderColor: 'rgba(75, 192, 192, 1)',
@@ -40,9 +40,26 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Cantidad', // Personaliza el título del eje Y
+                }
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: 'Cerro o lugar de accidente', // Personaliza el título del eje X
+                }
+            },
+
+        },
+        plugins: {
+            legend: {
+                display: false // Aquí desactivamos la leyenda
             }
-        }    }
+        }
+    }
 });
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -77,7 +94,6 @@ var myChart = new Chart(ctx, {
     data: {
         labels: labels,
         datasets: [{
-            label: 'Afectados',
             data: values,
             backgroundColor: colors,
             borderColor: 'rgba(75, 192, 192, 1)',
@@ -88,7 +104,22 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             y: {
-                beginAtZero: true
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Cantidad', // Personaliza el título del eje Y
+                }
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: 'Tipo de Rescate', // Personaliza el título del eje X
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: false // Aquí desactivamos la leyenda
             }
         }
     }
@@ -98,7 +129,7 @@ var myChart = new Chart(ctx, {
 var data_pie = chartPie;
 // Datos de ejemplo
 var labels = data_pie.map(function(item) {
-    return item.zona;
+    return item.descripcion;
 });
 
 var values = data_pie.map(function(item) {
@@ -110,7 +141,7 @@ var canvas = document.getElementById('myChart3');
 
 // Crea el gráfico de pie
 var myChart = new Chart(canvas, {
-    type: 'doughnut',
+    type: 'pie',
     data: {
         labels: labels,
         datasets: [{
@@ -134,6 +165,13 @@ var myChart = new Chart(canvas, {
             ],
             borderWidth: 1,
         }],
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: false // Aquí desactivamos la leyenda
+            }
+        }
     }
 });
 
@@ -178,5 +216,27 @@ var myChart = new Chart(canvas, {
             ],
             borderWidth: 1,
         }],
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Cantidad', // Personaliza el título del eje Y
+                }
+            },
+            x: {
+                title: {
+                    display: true,
+                    text: 'Fecha de Aciddente', // Personaliza el título del eje X
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: false // Aquí desactivamos la leyenda
+            }
+        }
     }
 });

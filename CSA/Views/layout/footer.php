@@ -9,7 +9,7 @@
       </footer>
     </div>
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-crosshair@1.1.0/dist/chartjs-plugin-crosshair.js"></script>
 <!-- Chartist.js -->
 
 <script>
