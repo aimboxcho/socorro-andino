@@ -5,7 +5,7 @@
           <div class="col-lg-6">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-category">Afectados por Zona</h5>
+                <h5 class="card-category"><i class="now-ui-icons business_chart-pie-36"></i> Afectados por Zona</h5>
               </div>
               <div class="card-body">
                 <div class="chart-area" style="display:flex; justify-content:center; padding: 5px;">
@@ -17,7 +17,7 @@
           <div class="col-lg-6 col-md-6">
             <div class="card card-chart" >
               <div class="card-header">
-                <h5 class="card-category">Cantidad de Busqueda y Rescate total</h5>
+                <h5 class="card-category"><i class="now-ui-icons business_chart-pie-36"></i> Cantidad de Busqueda y Rescate total</h5>
               </div>
               <div class="card-body">
                 <div class="chart-area"  style="display:flex; justify-content:center; padding: 5px;">
@@ -29,7 +29,7 @@
           <div class="col-lg-6 col-md-8">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-category">Cantidad de accidentado por tipo de lesion</h5>
+                <h5 class="card-category"><i class="now-ui-icons business_chart-pie-36"></i> Cantidad de accidentado por tipo de lesion</h5>
               </div>
               <div class="card-body">
                 <div class="chart-area" style="display:flex; justify-content:center; padding: 5px;">
@@ -41,7 +41,7 @@
           <div class="col-lg-6 col-md-6">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-category">Cantidad de rescate por fecha</h5>
+                <h5 class="card-category"><i class="now-ui-icons business_chart-pie-36"></i> Cantidad de rescate por fecha</h5>
               </div>
               <div class="card-body">
                 <div class="chart-area"  style="display:flex; justify-content:center; padding: 5px;">

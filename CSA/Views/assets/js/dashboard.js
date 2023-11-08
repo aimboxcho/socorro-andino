@@ -34,7 +34,7 @@ var myChart = new Chart(ctx, {
             backgroundColor: colors,
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 1,
-            categoryPercentage: 0.2
+            categoryPercentage: 0.3
         }]
     },
     options: {
@@ -51,12 +51,22 @@ var myChart = new Chart(ctx, {
                     display: true,
                     text: 'Cerro o lugar de accidente', // Personaliza el título del eje X
                 }
-            },
-
+            }
         },
         plugins: {
             legend: {
                 display: false // Aquí desactivamos la leyenda
+            },
+            datalabels: {
+                color: 'black', // Color del texto
+                anchor: 'end',
+                align: 'top',
+                font: {
+                    size: 12
+                },
+                formatter: function(value) {
+                    return value; // Muestra el valor de la barra
+                }
             }
         }
     }
@@ -117,6 +127,8 @@ var myChart = new Chart(ctx, {
                 }
             }
         },
+        
+
         plugins: {
             legend: {
                 display: false // Aquí desactivamos la leyenda
@@ -168,6 +180,12 @@ var myChart = new Chart(canvas, {
     },
     options: {
         plugins: {
+            datalabels: {
+                color: 'black', // Color del texto
+                formatter: (value) => {
+                    return value; // Muestra el valor dentro de la sección
+                }
+            },
             legend: {
                 display: false // Aquí desactivamos la leyenda
             }
