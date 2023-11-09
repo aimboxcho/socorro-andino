@@ -76,7 +76,27 @@
             return $array;
         }
 
+        
+        public function GraficoMap(){
+            require_once 'Models/afectado.php';
+
+            $line = new Afectado();
+            $map = $line->getAllMap();
+            $array = array();
+
+            $array = [];
+            while ($row = $map->fetch_assoc()) {
+                $array[] = [
+                    'edad' => $row['edad'],
+                    'cantidades' => $row['cantidades']
+                ];
+            }
+
+            return $array;
+        }
+
     }
 
 
 ?>
+

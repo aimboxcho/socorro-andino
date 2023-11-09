@@ -12,6 +12,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-crosshair@1.1.0/dist/chartjs-plugin-crosshair.js"></script>
 <!-- Chartist.js -->
 
+<!-- Grafico Barra de Zona -->
 <script>
   <?php 
     $chartjs = new Chartjs();
@@ -21,6 +22,7 @@
   var chartBar = <?php echo $data_json; ?>;
 </script>
 
+<!-- Grafico Barra por tipo de rescate -->
 <script>
   <?php 
     $chartjs = new Chartjs();
@@ -30,6 +32,7 @@
   var chartTipo = <?php echo $data_json4; ?>;
 </script>
 
+<!-- Grafico Linea por fecha de rescate -->
 <script>
   <?php 
     $chartjs = new Chartjs();
@@ -39,6 +42,7 @@
   var chartLine = <?php echo $data_json2; ?>;
 </script>
 
+<!-- Grafico Linea por fecha de rescate -->
 <script>
   <?php 
     $chartjs = new Chartjs();
@@ -48,10 +52,19 @@
   var chartPie = <?php echo $data_json3; ?>;
 </script>
 
+<!-- Grafico de Area por tipo de lesión -->
+
+<script>
+  <?php 
+    $chartjs = new Chartjs();
+    $date = $chartjs->GraficoMap();
+    $data_json5 = json_encode($date);
+  ?>
+  var chartMap = <?php echo $data_json5; ?>;
+</script>
+
 
 <script src="<?=base_url?>Views/assets/js/dashboard-apex.js"></script>
-
-<!--<script src="<?=base_url?>Views/assets/js/dashboard.js"></script>-->
 
 <script src="<?=base_url?>Views/assets/js/core/jquery.min.js"></script>
 <script src="<?=base_url?>Views/assets/js/core/popper.min.js"></script>
@@ -107,7 +120,7 @@
        {
           extend: 'excel',
        },
-       'print' // Habilitar el botón de impresión
+       'print'
      ]
 });
 </script>

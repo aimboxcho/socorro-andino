@@ -19,6 +19,11 @@
         private $tipo_sangre;         
         private $descripcion_volun;   
         private $imagen_volun;        
+        private $id_comuna;    
+        private $direccion;       
+        private $numero_emergencia;         
+        private $nombre_emergencia;   
+        private $estado;    
         private $db;
 
         public function __construct()
@@ -89,7 +94,25 @@
         public function getImagen(){
             return $this->imagen_volun;
         }
+        public function getComuna(){
+            return $this->id_comuna;
+        }
 
+        public function getDireccion(){
+            return $this->direccion;
+        }
+
+        public function getNumeroEmergencia(){
+            return $this->numero_emergencia;
+        }
+
+        public function getNombreEmergencia(){
+            return $this->nombre_emergencia;
+        }
+
+        public function getEstado(){
+            return $this->estado;
+        }
         public function setId($id){
             $this->id = $id;
         }
@@ -154,6 +177,26 @@
             $this->imagen_volun = $imagen_volun;
         }
 
+        public function setComuna($id_comuna){
+            $this->id_comuna = $id_comuna;
+        }   
+
+        public function setDireccion($direccion){
+            $this->direccion = $direccion;
+        }
+
+        public function setNumeroEmergencia($numero_emergencia){
+            $this->numero_emergencia = $numero_emergencia;
+        }
+
+        public function setNombreEmergencia($nombre_emergencia){
+            $this->nombre_emergencia = $nombre_emergencia;
+        }
+
+        public function setEstado($estado){
+            $this->estado = $estado;
+        }
+
         public function getAll(){
             $query = "SELECT * FROM voluntarios";
             $voluntarios = $this->db->query($query);
@@ -161,13 +204,13 @@
         }
 
         public function getOne(){
-            $query = "SELECT * FROM voluntarios WHERE id = {$this->getId()}";
+            $query = "SELECT v.*, c.nombreComuna as comuna FROM voluntarios v INNER JOIN Comunas c ON v.id_comuna = c.id WHERE v.id = {$this->getId()}";
             $voluntario = $this->db->query($query);
             return $voluntario->fetch_object();
         }
 
         public function save(){
-            $query = "INSERT INTO voluntarios VALUES(NULL, '{$this->getRut()}','{$this->getNombres()}','{$this->getApellidos()}','{$this->getFechaNacimiento()}',{$this->getEdad()},'{$this->getEmail()}', '{$this->getPassword()}', {$this->getTelefono()}, '{$this->getOcupacion()}', '{$this->getTipo()}', '{$this->getEnfermedad()}', '{$this->getAlergia()}',  '{$this->getTipoSangre()}',  '{$this->getDescripcion()}', '{$this->getImagen()}')";
+            $query = "INSERT INTO voluntarios VALUES(NULL, '{$this->getRut()}','{$this->getNombres()}','{$this->getApellidos()}','{$this->getFechaNacimiento()}',{$this->getEdad()},'{$this->getEmail()}', '{$this->getPassword()}', {$this->getTelefono()}, '{$this->getOcupacion()}', '{$this->getTipo()}', '{$this->getEnfermedad()}', '{$this->getAlergia()}',  '{$this->getTipoSangre()}',  '{$this->getDescripcion()}', '{$this->getImagen()}', {$this->getComuna()},'{$this->getDireccion()}',{$this->getNumeroEmergencia()},'{$this->getNombreEmergencia()}',{$this->getEstado()} )";
             $save = $this->db->query($query);
 
             if($save){

@@ -46,6 +46,12 @@ CREATE TABLE Voluntarios(
     tipo_sangre         varchar(10),
     descripcion_volun   TEXT(100) not null,
     imagen_volun        BLOB,
+    id_comuna           int(11) not null,
+    direccion           varchar(50),
+    numero_emergencia   number,
+    nombre_emergencia   varchar(50),
+    estado              BOOLEAN,
+    CONSTRAINT fk_id_comuna FOREIGN KEY(id_comuna) REFERENCES Comunas(id)
     CONSTRAINT uq_rut_volun UNIQUE(rut_volun),
     CONSTRAINT uq_email_volun UNIQUE(email_volun)
 )ENGINE=InnoDb;
@@ -88,3 +94,15 @@ CREATE TABLE Registros(
     id_voluntario int(11),
     CONSTRAINT fk_id_voluntario_registro FOREIGN KEY(id_voluntario) REFERENCES Voluntarios(id) ON CASCADE
 )ENGINE=InnoDb;
+
+
+INSERT INTO `rescate` VALUES (NULL, '213123', 'Osvaldo', '15', '21414', 'os@ads.com', 'sad', '1', '2', 'Hombre', 'Rescate', '2021-05-11', '28:09:06', 'Lesión de perone', 'Bosque de los Brujos', 'asd', '23', '32:17:06', '14:26:06', '06:25:06', '2312', '232', '22', '2', 'asd', '14');
+
+INSERT INTO `rescate` VALUES (NULL, '213123', 'Maria', '14', '21414', 'tre@ads.com', 'sad', '1', '2', 'Mujer', 'Rescate', '2022-06-11', '28:09:06', 'Luxacion de codo', 'Cerro el Plomo', 'asd', '23', '32:17:06', '14:26:06', '06:25:06', '2312', '232', '22', '2', 'asd', '14');
+
+INSERT INTO `rescate` VALUES (NULL, '213123', 'Felipe', '30', '21414', 'fel@ads.com', 'sad', '1', '2', 'Hombre', 'Busqueda', '2023-12-11', '28:09:06', 'Lesión de tobillo', 'Cerro Leonera', 'asd', '23', '32:17:06', '14:26:06', '06:25:06', '2312', '232', '22', '2', 'asd', '14');
+
+INSERT INTO `rescate` VALUES (NULL, '213123', 'Natalia', '54', '21414', 'trip@ads.com', 'sad', '1', '2', 'Mujer', 'Rescate', '2022-09-11', '28:09:06', 'Lesión de perone', 'Cerro Leonera', 'asd', '23', '32:17:06', '14:26:06', '06:25:06', '2312', '232', '22', '2', 'asd', '14');
+
+
+

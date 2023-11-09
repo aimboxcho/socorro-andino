@@ -218,3 +218,41 @@
   var chart = new ApexCharts(document.querySelector("#chart4"), options);
   chart.render();
 
+  //-----------------------------------------------------------------------------------------------
+
+  //MAP
+
+  var datamap = chartMap;
+  // Extrae las etiquetas (descripciones) y los valores (id) de los datos
+  var labels = datamap.map(function(item) {
+      return item.edad;
+  });
+  
+  var values = datamap.map(function(item) {
+      return item.cantidades;
+  });
+
+  var options = {
+    series: [
+      {
+        name: 'Cantidad',
+        data: datamap.map(function(item) {
+          return {
+            x: item.edad,
+            y: item.cantidades  // Asegúrate de convertir a número si es un string
+          };
+        })
+      }
+    ],
+    legend: {
+      show: false
+    },
+    chart: {
+      height: 350,
+      type: 'treemap'
+    }
+  };
+  
+  var chart = new ApexCharts(document.querySelector("#chart5"), options);
+  chart.render();
+

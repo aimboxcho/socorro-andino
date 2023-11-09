@@ -74,11 +74,24 @@ class voluntarioController{
             $fecha = isset($_POST['fecha_naci_volun']) ? $_POST['fecha_naci_volun'] : false;
             $telefono = isset($_POST['telefono_volun']) ? $_POST['telefono_volun'] : false;
             $ocupacion = isset($_POST['ocupacion']) ? $_POST['ocupacion'] : false;
+            $tipo_voluntario = isset($_POST['tipo_volun']) ? $_POST['tipo_volun'] : false;
             $enfermedad = isset($_POST['enfermedad_volun']) ? $_POST['enfermedad_volun'] : false;
             $alergia = isset($_POST['alergia_volun']) ? $_POST['alergia_volun'] : false;
-            $tipo_voluntario = isset($_POST['tipo_volun']) ? $_POST['tipo_volun'] : false;
             $tipo_sangre = isset($_POST['$tipo_sangre']) ? $_POST['tipo_sangre'] : false;
             $descripcion = isset($_POST['descripcion_volun']) ? $_POST['descripcion_volun'] : false;
+
+
+            $id_comuna = isset($_POST['id_comuna']) ? $_POST['id_comuna'] : false;
+            $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : false;
+            $numero_emergencia = isset($_POST['numero_emergencia']) ? $_POST['numero_emergencia'] : false;
+            $nombre_emergencia = isset($_POST['$nombre_emergencia']) ? $_POST['nombre_emergencia'] : false;
+            $estado = isset($_POST['estado']) ? $_POST['estado'] : false;
+
+            if($estado = 'true'){
+                $estado = true;
+            }else{
+                $estado = false;
+            }
 
             $voluntario = new voluntario();
             $voluntario->setRut($rut); 
@@ -90,9 +103,9 @@ class voluntarioController{
             $voluntario->setFechaNacimiento($fecha);
             $voluntario->setTelefono($telefono);
             $voluntario->setOcupacion($ocupacion);
+            $voluntario->setTipoVoluntario($tipo_voluntario);
             $voluntario->setEnfermedad($enfermedad);
             $voluntario->setAlergia($alergia);
-            $voluntario->setTipoVoluntario($tipo_voluntario);
             $voluntario->setTipoSangre($tipo_sangre);
             $voluntario->setDescripcion($descripcion);
             
@@ -111,6 +124,15 @@ class voluntarioController{
                     move_uploaded_file($file['tmp_name'], 'uploads/images/'.$filename);
                 }
             }
+
+            $voluntario->setComuna($id_comuna);
+            $voluntario->setDireccion($direccion);
+            $voluntario->setNumeroEmergencia($numero_emergencia);
+            $voluntario->setNombreEmergencia($nombre_emergencia);
+            $voluntario->setEstado($estado);
+
+
+
             $guardar = $voluntario->save();
 
             if($guardar){

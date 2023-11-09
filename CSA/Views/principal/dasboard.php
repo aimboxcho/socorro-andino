@@ -46,6 +46,16 @@
               </div>
             </div>
           </div>
+          <div class="col-lg-12 col-md-8">
+            <div class="card ">
+              <div class="card-header">
+                <h5 class="card-category"><i class="now-ui-icons business_chart-pie-36"></i> Cantidad de accidentado por tipo de lesion</h5>
+              </div>
+              <div class="card-body">
+                  <div id="chart5"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="row">

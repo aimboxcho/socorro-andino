@@ -153,7 +153,13 @@ class Afectado{
     }
 
     public function getAllLine(){
-        $query = "SELECT count(*) as cantidades, DATE_FORMAT(fecha_rescate, '%Y-%m') as mes_anio  FROM Rescate GROUP BY mes_anio";
+        $query = "SELECT count(*) as cantidades, DATE_FORMAT(fecha_rescate, '%Y-%m') as mes_anio  FROM Rescate GROUP BY mes_anio ORDER BY mes_anio";
+        $save = $this->db->query($query);
+        return $save;
+    }
+
+    public function getAllMap(){
+        $query = "SELECT count(*) as cantidades,  edad  FROM Rescate GROUP BY edad";
         $save = $this->db->query($query);
         return $save;
     }
