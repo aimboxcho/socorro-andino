@@ -7,50 +7,47 @@
               <div class="card-header">
                 <h5 class="card-category"><i class="now-ui-icons business_chart-pie-36"></i> Afectados por Zona</h5>
               </div>
-              <div class="card-body">
-                <div class="chart-area" style="display:flex; justify-content:center; padding: 5px;">
-                  <canvas id="myChart"></canvas>
-                </div>
+              <div class="card-body" style="height: 400px;">
+                  <div class="chart-area"  style="display:flex; justify-content:center; padding: 5px;">
+                      <div id="chart"></div>
+                  </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-6">
             <div class="card card-chart" >
+              <div class="card-header">
+                <h5 class="card-category"><i class="now-ui-icons business_chart-pie-36"></i> Afectados por Zona</h5>
+              </div>
+              <div class="card-body" style="height: 400px;">
+                  <div class="chart-area"  style="display:flex; justify-content:center; padding: 5px;">
+                      <div id="chart4"></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card" >
               <div class="card-header">
                 <h5 class="card-category"><i class="now-ui-icons business_chart-pie-36"></i> Cantidad de Busqueda y Rescate total</h5>
               </div>
               <div class="card-body">
-                <div class="chart-area"  style="display:flex; justify-content:center; padding: 5px;">
-                  <canvas id="myChart2"></canvas>
-                </div>
+                  <div id="chart2"></div>
               </div>
             </div>
           </div>
           <div class="col-lg-6 col-md-8">
-            <div class="card card-chart">
+            <div class="card ">
               <div class="card-header">
                 <h5 class="card-category"><i class="now-ui-icons business_chart-pie-36"></i> Cantidad de accidentado por tipo de lesion</h5>
               </div>
               <div class="card-body">
-                <div class="chart-area" style="display:flex; justify-content:center; padding: 5px;">
-                  <canvas id="myChart3"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-category"><i class="now-ui-icons business_chart-pie-36"></i> Cantidad de rescate por fecha</h5>
-              </div>
-              <div class="card-body">
-                <div class="chart-area"  style="display:flex; justify-content:center; padding: 5px;">
-                  <canvas id="myChart4"></canvas>
-                </div>
+                  <div id="chart3"></div>
               </div>
             </div>
           </div>
         </div>
+
         <div class="row">
           <div class="col-md-12">
             <div class="card  card-tasks">
@@ -113,6 +110,9 @@
           </div>
           </div>
       </div>
+
+
+
 
       
 

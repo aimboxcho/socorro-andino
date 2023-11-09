@@ -15,19 +15,28 @@
 <script>
   <?php 
     $chartjs = new Chartjs();
-    $data = $chartjs->Grafico1();
-    $data_json = json_encode($data);
+    $date = $chartjs->Grafico1();
+    $data_json = json_encode($date);
   ?>
-  var chartData = <?php echo $data_json; ?>;
+  var chartBar = <?php echo $data_json; ?>;
 </script>
 
 <script>
   <?php 
     $chartjs = new Chartjs();
-    $data = $chartjs->Grafico2();
-    $data_json2 = json_encode($data);
+    $date = $chartjs->Grafico2();
+    $data_json4 = json_encode($date);
   ?>
-  var chartDatas = <?php echo $data_json2; ?>;
+  var chartTipo = <?php echo $data_json4; ?>;
+</script>
+
+<script>
+  <?php 
+    $chartjs = new Chartjs();
+    $date = $chartjs->GraficoLine();
+    $data_json2 = json_encode($date);
+  ?>
+  var chartLine = <?php echo $data_json2; ?>;
 </script>
 
 <script>
@@ -39,19 +48,10 @@
   var chartPie = <?php echo $data_json3; ?>;
 </script>
 
-<script>
-  <?php 
-    $chartjs = new Chartjs();
-    $line = $chartjs->GraficoLine();
-    $data_json4 = json_encode($line);
-  ?>
-  var chartLine = <?php echo $data_json4; ?>;
 
-</script>
+<script src="<?=base_url?>Views/assets/js/dashboard-apex.js"></script>
 
-
-
-<script src="<?=base_url?>Views/assets/js/dashboard.js"></script>
+<!--<script src="<?=base_url?>Views/assets/js/dashboard.js"></script>-->
 
 <script src="<?=base_url?>Views/assets/js/core/jquery.min.js"></script>
 <script src="<?=base_url?>Views/assets/js/core/popper.min.js"></script>

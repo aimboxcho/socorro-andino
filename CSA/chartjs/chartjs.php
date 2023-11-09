@@ -9,22 +9,13 @@
             $rescates = $rescate->getAllChart();
             $data = array();
 
-            while($rescate = $rescates->fetch_object()){
-
-                $id = $rescate->cantidad;
-                $zona = $rescate->zona;
-
-                if(isset($data[$zona])){
-                    $data[$zona]['id']+=$id;
-                }else{
-                    $data[$zona] = array(
-                        'zona' => $rescate->zona,
-                        'id' => $rescate->cantidad
-                    );
-                }
+            $data = [];
+            while ($row = $rescates->fetch_assoc()) {
+                $data[] = [
+                    'zona' => $row['zona'],
+                    'cantidad' => $row['cantidad']
+                ];
             }
-
-            $data = array_values($data);
 
             return $data;
         }
@@ -34,27 +25,17 @@
 
             $rescatedate = new Afectado();
             $rescatedates = $rescatedate->getAllChart2();
-            $datadate = array();
-            
+            $data = array();
 
-            while($rescate = $rescatedates->fetch_object()){
-
-                $id = $rescate->cantidades;
-                $tipo_rescate = $rescate->tipo_rescate;
-
-                if(isset($datadate[$tipo_rescate])){
-                    $datadate[$tipo_rescate]['id']+=$id;
-                }else{
-                    $datadate[$tipo_rescate] = array(
-                        'id' => $rescate->cantidades,
-                        'tipo_rescate' => $rescate->tipo_rescate
-                    );
-                }
+            $data = [];
+            while ($row = $rescatedates->fetch_assoc()) {
+                $data[] = [
+                    'tipo_rescate' => $row['tipo_rescate'],
+                    'cantidades' => $row['cantidades']
+                ];
             }
 
-            $datadate = array_values($datadate);
-
-            return $datadate;
+            return $data;
         }
 
         public function GraficoPie(){
@@ -62,26 +43,19 @@
 
             $circle = new Afectado();
             $circles = $circle->getAllPie();
-            $array = array();
+            $data = array();
 
-            while($pie = $circles->fetch_object()){
-                $id = $pie->cantidades;
-                $descripcion = $pie->descripcion;
-
-                if(isset($array[$descripcion])){
-                    $array[$descripcion]['id']+=$id;
-                }else{
-                    $array[$descripcion] = array(
-                        'id' => $pie->cantidades,
-                        'descripcion' => $pie->descripcion
-                    );
-                }
+            $data = [];
+            while ($row = $circles->fetch_assoc()) {
+                $data[] = [
+                    'descripcion' => $row['descripcion'],
+                    'cantidades' => $row['cantidades']
+                ];
             }
 
-            $array = array_values($array);
-
-            return $array;
+            return $data;
         }
+
 
 
         public function GraficoLine(){
@@ -89,24 +63,17 @@
 
             $line = new Afectado();
             $lines = $line->getAllLine();
-            $array_line = array();
+            $array = array();
 
-            while($row = $lines->fetch_object()){
-                $id = $row->cantidades;
-                $mes_anio = $row->mes_anio;
-        
-                if(isset($array_line[$mes_anio])){
-                    $array_line[$mes_anio]['id'] += $id;
-                } else {
-                    $array_line[$mes_anio] = array(
-                        'id' => $row->cantidades,
-                        'mes_anio' => $row->mes_anio
-                    );
-                }
+            $array = [];
+            while ($row = $lines->fetch_assoc()) {
+                $array[] = [
+                    'mes_anio' => $row['mes_anio'],
+                    'cantidades' => $row['cantidades']
+                ];
             }
-            $array_line = array_values($array_line);
 
-            return $array_line;
+            return $array;
         }
 
     }

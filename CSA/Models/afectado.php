@@ -135,25 +135,25 @@ class Afectado{
 
 
     public function getAllChart(){
-        $query = "SELECT count(id) as cantidad, zona, tipo_rescate FROM Rescate GROUP BY zona";
+        $query = "SELECT count(*) as cantidad, zona FROM Rescate GROUP BY zona";
         $save = $this->db->query($query);
         return $save;
     }
 
     public function getAllChart2(){
-        $query = "SELECT count(id) as cantidades, tipo_rescate  FROM Rescate GROUP BY tipo_rescate";
+        $query = "SELECT count(*) as cantidades, tipo_rescate  FROM Rescate GROUP BY tipo_rescate";
         $save = $this->db->query($query);
         return $save;
     }
 
     public function getAllPie(){
-        $query = "SELECT count(id) as cantidades, descripcion  FROM Rescate GROUP BY descripcion";
+        $query = "SELECT count(*) as cantidades, descripcion  FROM Rescate GROUP BY descripcion";
         $save = $this->db->query($query);
         return $save;
     }
 
     public function getAllLine(){
-        $query = "SELECT count(id) as cantidades, DATE_FORMAT(fecha_rescate, '%Y-%m') as mes_anio  FROM Rescate GROUP BY mes_anio";
+        $query = "SELECT count(*) as cantidades, DATE_FORMAT(fecha_rescate, '%Y-%m') as mes_anio  FROM Rescate GROUP BY mes_anio";
         $save = $this->db->query($query);
         return $save;
     }
