@@ -1,60 +1,4 @@
 
-  // --------------------------------------------------------------------------------------------------------
-  var data_pie = chartPie;
-  var labels = data_pie.map(function(item) {
-      return item.descripcion;
-  });
-  
-  var values = data_pie.map(function(item) {
-      return item.cantidades; 
-  });
-
-  var colors = ['#FF5733', '#33FF57', '#3366FF', '#FF33CC', '#FFD700', '#7B68EE'];
-
-  
-  var options = {
-    series: values,
-    chart: {
-    width: 380,
-    type: 'polarArea'
-  },
-  labels: labels,
-  fill: {
-    opacity: 1
-  },
-  stroke: {
-    width: 1,
-    colors: undefined
-  },
-  yaxis: {
-    show: false
-  },
-  legend: {
-    position: 'bottom'
-  },
-  plotOptions: {
-    polarArea: {
-      rings: {
-        strokeWidth: 0
-      },
-      spokes: {
-        strokeWidth: 0
-      },
-    }
-  },
-  theme: {
-    monochrome: {
-      enabled: true,
-      shadeTo: 'light',
-      shadeIntensity: 0.6
-    }
-  },
-  };
-
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
-  chart.render();
-
-
 //-----------------------------------------------------------------------------------------------------------------------
 
   var data_pie = chartBar;
@@ -255,4 +199,64 @@
   
   var chart = new ApexCharts(document.querySelector("#chart5"), options);
   chart.render();
+
+
+
+  
+  // --------------------------------------------------------------------------------------------------------
+  var data_pie = chartPie;
+  var labels = data_pie.map(function(item) {
+      return item.descripcion;
+  });
+  
+  var values = data_pie.map(function(item) {
+      return item.cantidades; 
+  });
+
+  var colors = ['#FF5733', '#33FF57', '#3366FF', '#FF33CC', '#FFD700', '#7B68EE'];
+
+  
+  var options = {
+    series: values,
+    chart: {
+    width: 380,
+    type: 'polarArea'
+  },
+  labels: labels,
+  fill: {
+    opacity: 1
+  },
+  stroke: {
+    width: 1,
+    colors: undefined
+  },
+  yaxis: {
+    show: false
+  },
+  legend: {
+    position: 'bottom'
+  },
+  plotOptions: {
+    polarArea: {
+      rings: {
+        strokeWidth: 0
+      },
+      spokes: {
+        strokeWidth: 0
+      },
+    }
+  },
+  theme: {
+    monochrome: {
+      enabled: true,
+      shadeTo: 'light',
+      shadeIntensity: 0.6
+    }
+  },
+  };
+
+  var chart = new ApexCharts(document.querySelector("#chart"), options);
+  chart.render();
+
+
 
