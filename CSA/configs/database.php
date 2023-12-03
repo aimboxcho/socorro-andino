@@ -3,7 +3,7 @@
 class DATABASE{
 
     public static function connect(){
-        $db = new mysqli("localhost", "admin", "", "SocorroAndino");
+        $db = new mysqli("localhost", "root", "", "SocorroAndino");
         return $db;
     }
 }
