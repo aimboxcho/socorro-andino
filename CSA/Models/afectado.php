@@ -98,7 +98,11 @@ class Afectado{
     }
 
     public function getOne(){
-        $query = "SELECT * FROM Rescate WHERE id = {$this->getId()}";
+        $query = "SELECT r.*, c.nombreComuna as comuna, v.nombres_volun as voluntario, v.id as id_voluntario, r.id as id_rescate 
+        FROM Rescate r 
+        INNER JOIN voluntarios v ON r.id_voluntario = v.id 
+        INNER JOIN comunas c ON r.id_comuna = c.id 
+        WHERE r.id = {$this->getId()}";
         $save = $this->db->query($query);
         return $save->fetch_object();
     }

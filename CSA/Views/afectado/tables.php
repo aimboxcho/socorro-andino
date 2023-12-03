@@ -6,7 +6,7 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Registro de Socorrista</h4>
+                <h4 class="card-title"> Registro de Operativo</h4>
                 <p><a href="<?=base_url?>afectado/register" class="btn">Registrar Rescate</a></p>
                 <?php if(isset($_SESSION['complete'])):?>
                     <div class="card-header" style="background:rgb(123, 171, 91); color: white; display: inline-block;">
@@ -43,6 +43,9 @@
                         Responsable
                       </th>
                       <th class="text-right">
+                        Ver
+                      </th>
+                      <th class="text-right">
                         Eliminar
                       </th>
                     </thead>
@@ -66,6 +69,9 @@
                         </td>
                         <td class="text-right">
                           <?=$afectado->voluntario?>
+                        </td>
+                        <td class="text-center">
+                          <a href="<?=base_url?>afectado/verdetalles&id=<?=$afectado->id?>"><i class="now-ui-icons business_badge"></i></a>
                         </td>
                         <td class="text-center">
                           <a href="" onclick="verificarContraseña(<?=$afectado->id?>)"><i class="now-ui-icons ui-1_simple-remove"></i></a>

@@ -63,7 +63,6 @@
   var chartMap = <?php echo $data_json5; ?>;
 </script>
 
-
 <script src="<?=base_url?>Views/assets/js/dashboard-apex.js"></script>
 
 <script src="<?=base_url?>Views/assets/js/core/jquery.min.js"></script>
