@@ -54,6 +54,50 @@
                     </div>
                   </div>
                   <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Edad</label>
+                        <input type="number" class="form-control"  disabled="" value="<?=$voluntario->edad_volun?>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Ocupación</label>
+                        <input type="text" class="form-control"  disabled="" value="<?=$voluntario->ocupacion?>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Comuna</label>
+                        <input type="text" class="form-control" disabled="" value="<?=$voluntario->comuna?>">
+                      </div>
+                    </div>
+                    <div class="col-md-6 px-1">
+                      <div class="form-group">
+                        <label>Dirreción</label>
+                        <input type="text" class="form-control" disabled=""  value="<?=$voluntario->direccion?>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Numero Emergencia</label>
+                        <input type="number" class="form-control" disabled="" value="<?=$voluntario->numero_emergencia?>">
+                      </div>
+                    </div>
+                    <div class="col-md-6 px-1">
+                      <div class="form-group">
+                        <label>Nombre Emergencia</label>
+                        <input type="text" class="form-control" disabled=""  value="<?=$voluntario->nombre_emergencia?>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>Enfermedad</label>
@@ -66,10 +110,10 @@
                         <input type="text" class="form-control" disabled=""  value="<?=$voluntario->alergia_volun?>">
                       </div>
                     </div>
-                    <div class="col-md-4 pl-1">
+                    <div class="col-md-4 px-1">
                       <div class="form-group">
-                        <label>Tipo de Sangre</label>
-                        <input type="text" class="form-control" disabled="" value="<?=$voluntario->tipo_sangre?>">
+                        <label>Estado</label>
+                        <input type="text" class="form-control" disabled="" value="<?= ($voluntario->estado == 1) ? 'Vigente' : 'No Vigente'; ?>">
                       </div>
                     </div>
                   </div>

@@ -3,6 +3,9 @@
 require_once 'Models/afectado.php';
 require_once 'helpers/helpers.php';
 
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
 class afectadoController{
     public function register(){
         Utils::SessionON();
@@ -14,6 +17,15 @@ class afectadoController{
         $afectado = new Afectado();
         $afectados =  $afectado->getAll();
         require_once 'Views/afectado/tables.php';
+    }
+
+    public function verdetalles(){
+        Utils::SessionON();
+        $id = $_GET['id'];
+        $afectados = new Afectado();
+        $afectados->setId($id);
+        $afectado = $afectados->getOne();
+        require_once 'Views/afectado/verDetalles.php';
     }
 
 
@@ -102,7 +114,15 @@ class afectadoController{
     }
 
 
+
+    public function pdf(){
+
+        require('fpdf/fpdf.php');
+
+    }
+
 }
+
 
 
 

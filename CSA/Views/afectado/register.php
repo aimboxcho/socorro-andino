@@ -88,6 +88,8 @@
                         <select name="tipo_rescate"  class="form-control" required>
                           <option value="Rescate">Rescate</option>
                           <option value="Busqueda">Busqueda</option>
+                          <option value="Varado">Varado</option>
+                          <option value="Fellecido">Fellecido</option>
                         </select>
                       </div>
                     </div>

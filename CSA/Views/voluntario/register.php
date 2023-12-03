@@ -76,6 +76,34 @@
                   <div class="row">
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
+                      <label>Comuna Pertenece</label>
+                        <?php $comunas = Utils::ShowComunas(); ?>
+                        <select name="id_comuna"  class="form-control">
+                            <?php while($comuna = $comunas->fetch_object()):?>
+                                <option value="<?=$comuna->id?>"><?=$comuna->nombreComuna?></option>
+                            <?php  endwhile; ?>
+                          </select>
+                      </div>
+                    </div>
+                    <div class="col-md-4 px-1">
+                      <div class="form-group">
+                        <label>Direccion</label>
+                        <input type="text" name="direccion" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label>Estado</label>
+                        <select name="alergia_volun" class="form-control">
+                          <option value="true">Vigente</option>
+                          <option value="false">No Vigente</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 pr-1">
+                      <div class="form-group">
                         <label>Tipo de Voluntario</label>
                         <select name="tipo_volun" class="form-control">
                           <option value="Aspirante">Aspirante</option>
@@ -115,6 +143,20 @@
                           <option value="AB">AB</option>
                           <option value="Sin Conocimiento">Sin Conocimiento</option>
                         </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Numero de Emergencia</label>
+                        <input type="number" class="form-control" placeholder="" name="numero_emergencia" oninput="validarNumber(this)" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label>Nombre de Emergencia</label>
+                        <input type="text" class="form-control" placeholder="" name="nombre_emergencia" required>
                       </div>
                     </div>
                   </div>

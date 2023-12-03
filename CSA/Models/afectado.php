@@ -98,7 +98,11 @@ class Afectado{
     }
 
     public function getOne(){
-        $query = "SELECT * FROM Rescate WHERE id = {$this->getId()}";
+        $query = "SELECT r.*, c.nombreComuna as comuna, v.nombres_volun as voluntario, v.id as id_voluntario, r.id as id_rescate 
+        FROM Rescate r 
+        INNER JOIN voluntarios v ON r.id_voluntario = v.id 
+        INNER JOIN comunas c ON r.id_comuna = c.id 
+        WHERE r.id = {$this->getId()}";
         $save = $this->db->query($query);
         return $save->fetch_object();
     }
@@ -135,25 +139,31 @@ class Afectado{
 
 
     public function getAllChart(){
-        $query = "SELECT count(id) as cantidad, zona, tipo_rescate FROM Rescate GROUP BY zona";
+        $query = "SELECT count(*) as cantidad, zona FROM Rescate GROUP BY zona";
         $save = $this->db->query($query);
         return $save;
     }
 
     public function getAllChart2(){
-        $query = "SELECT count(id) as cantidades, tipo_rescate  FROM Rescate GROUP BY tipo_rescate";
+        $query = "SELECT count(*) as cantidades, tipo_rescate  FROM Rescate GROUP BY tipo_rescate";
         $save = $this->db->query($query);
         return $save;
     }
 
     public function getAllPie(){
-        $query = "SELECT count(id) as cantidades, descripcion  FROM Rescate GROUP BY descripcion";
+        $query = "SELECT count(*) as cantidades, descripcion  FROM Rescate GROUP BY descripcion";
         $save = $this->db->query($query);
         return $save;
     }
 
     public function getAllLine(){
-        $query = "SELECT count(id) as cantidades, DATE_FORMAT(fecha_rescate, '%Y-%m') as mes_anio  FROM Rescate GROUP BY mes_anio";
+        $query = "SELECT count(*) as cantidades, DATE_FORMAT(fecha_rescate, '%Y-%m') as mes_anio  FROM Rescate GROUP BY mes_anio ORDER BY mes_anio";
+        $save = $this->db->query($query);
+        return $save;
+    }
+
+    public function getAllMap(){
+        $query = "SELECT count(*) as cantidades,  edad  FROM Rescate GROUP BY edad";
         $save = $this->db->query($query);
         return $save;
     }
