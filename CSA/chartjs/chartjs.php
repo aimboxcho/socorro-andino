@@ -1,5 +1,7 @@
 <?php 
 
+    require_once 'Models/afectado.php';
+
     class Chartjs{
 
         public function Grafico1(){
