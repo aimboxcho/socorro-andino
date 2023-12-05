@@ -88,6 +88,9 @@ CREATE TABLE Rescate (
     distancia_recorrida INT(11),
     condiciones VARCHAR(100),
     id_voluntario INT(11) NOT NULL,
+    longitud VARCHAR(40),
+    Latitud VARCHAR(40),
+    created_at DATETIME,
     CONSTRAINT fk_id_voluntario_respo FOREIGN KEY (id_voluntario) REFERENCES Voluntarios(id) ON DELETE CASCADE,
     CONSTRAINT fk_id_comuna_rescate FOREIGN KEY (id_comuna) REFERENCES Comunas(id)
 ) ENGINE=InnoDB;
@@ -100,6 +103,17 @@ CREATE TABLE Registros (
     id_voluntario INT(11),
     CONSTRAINT fk_id_voluntario_registro FOREIGN KEY (id_voluntario) REFERENCES Voluntarios(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
+
+CREATE TABLE Gastos(
+    id INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    cantidad INT(255) not null,
+    descripcion VARCHAR(100) not null,
+    costo INT(255) not null,
+    user_id INT(11) not null,
+    created_at DATETIME,
+    updated_at DATETIME,
+    CONSTRAINT fk_user_gastos FOREIGN KEY(user_id) REFERENCES Voluntarios(id)
+)ENGINE=InnoDb;
 
 INSERT INTO `rescate` VALUES (NULL, '213123', 'Osvaldo', '15', '21414', 'os@ads.com', 'sad', '1', '2', 'Hombre', 'Rescate', '2021-05-11', '28:09:06', 'Lesión de perone', 'Bosque de los Brujos', 'asd', '23', '32:17:06', '14:26:06', '06:25:06', '2312', '232', '22', '2', 'asd', '14');
 

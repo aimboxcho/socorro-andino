@@ -1,7 +1,5 @@
 <div class="panel-header">
-      </div>
-
-      
+      </div>      
       <div class="content">
         <div class="row">
           <div class="col-lg-6">

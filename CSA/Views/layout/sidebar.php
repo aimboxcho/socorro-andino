@@ -36,6 +36,12 @@
               <p>Gestión de Inventario</p>
             </a>
           </li>
+          <li>
+            <a href="<?=base_url?>gastos/index">
+              <i class="now-ui-icons ui-1_calendar-60"></i>
+              <p>Gestion de Gastos</p>
+            </a>
+          </li>
           <!--<li>
             <a href="calendario/calendario">
               <i class="now-ui-icons ui-1_calendar-60"></i>
