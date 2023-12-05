@@ -88,8 +88,9 @@
 <script src="<?=base_url?>Views/assets/js/jspdf.min.js"></script>
 <script type="text/javascript" src="<?=base_url?>Views/assets/js/pdf.js"></script>
 
+<!-- Moment -->
+<script type="text/javascript" src="<?=base_url?>Views/assets/js/moment.js"></script>
 
-<!-- API MAPA -->
 
 </body>
 

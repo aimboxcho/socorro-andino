@@ -6,10 +6,12 @@ class GastosController{
 
     public function index(){
         Utils::SessionON();
-        require_once 'Views/gastos/gastos.php';
-
+        
         $gastos = new Gastos();
         $tipo_gasto = $gastos->getAll();
+
+        // Pasar el array a la vista
+        require_once 'Views/gastos/gastos.php';
     }
 
     public function save(){

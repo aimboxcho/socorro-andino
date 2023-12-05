@@ -29,6 +29,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xwDEI7LO8L6q6DAaPU0Ld4WjbRO4gA8rpZ57gN6tFVRvX8gcmhR6UnyVKtqPsYC4GBuA2od+OoTITW5c+ENExA==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-5x2ejL9UqnlZNQ5vPPAFTzpHs/uARlO8g+SMeswBO7jkaXEkK7qR4LczXSGIT5i6N3Bc2PBOpO5K+gO3N3jPXw==" crossorigin=""></script>
 
+    <!-- Sacar hace cuanto tiempo se registro algo -->
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment-with-locales.min.js"></script>
+    <script>
+        moment.locale('es');
+    </script>
 </head>
 
 

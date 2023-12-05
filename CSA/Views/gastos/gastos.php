@@ -79,7 +79,10 @@
                           <th>
                             Cantidad
                           </th>
-                          <th class="text-right">
+                          <th>
+                            Registro
+                          </th>
+                          <th class="text-center">
                             Eliminar
                           </th>
                         </thead>
@@ -87,8 +90,9 @@
                         <?php while($gastito = $tipo_gasto->fetch_object()): ?>
                           <tr>
                             <td><?= $gastito->descripcion ?></td>
-                            <td><?= $gastito->costo ?></td>
+                            <td><?= '$' . number_format($gastito->costo, 0, '.', '.') . ' CLP' ?></td>
                             <td><?= $gastito->cantidad ?></td>
+                            <td class="time-difference"><?= $gastito->created_at ?></td>
                             <td class="text-center">
                               <a href=""  onclick="verificarContraseña(<?=$gastito->id?>)"><i class="now-ui-icons ui-1_simple-remove"></i></a>
                             </td>
